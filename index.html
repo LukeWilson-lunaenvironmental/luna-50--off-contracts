@@ -984,24 +984,7 @@
         <strong>No charges until your current contract expires.</strong> We'll contact your provider and handle the switch automatically on your expiration date. You get Luna benefits immediately.
       </div>
 
-      <!-- Tier select -->
-      <div class="tier-select">
-        <label>Choose your contract</label>
-        <div class="tier-options">
-          <div class="tier-opt" id="tier-basic" onclick="selectTier('basic')">
-            <p class="tier-opt-name">Basic</p>
-            <p class="tier-opt-price">$15<span style="font-size:13px;font-weight:500">/mo</span></p>
-            <p class="tier-opt-was">was $30/mo</p>
-            <p class="tier-opt-desc">Standard aerobic maintenance</p>
-          </div>
-          <div class="tier-opt selected" id="tier-advanced" onclick="selectTier('advanced')">
-            <p class="tier-opt-name">Advanced</p>
-            <p class="tier-opt-price">$25<span style="font-size:13px;font-weight:500">/mo</span></p>
-            <p class="tier-opt-was">was $50/mo</p>
-            <p class="tier-opt-desc">Full coverage + priority</p>
-          </div>
-        </div>
-      </div>
+
 
       <div class="form-field">
         <label>Full Name *</label>
@@ -1047,7 +1030,7 @@
   var CLAIMED = 3;
   var TOTAL = 10;
   var currentMode = 'new';
-  var currentTier = 'advanced';
+
 
   function updateSpotDisplay() {
     var left = TOTAL - CLAIMED;
@@ -1067,12 +1050,6 @@
     document.getElementById('submit-btn').textContent = mode === 'switch'
       ? 'Switch Me to Luna →'
       : 'Reserve My Spot →';
-  }
-
-  function selectTier(tier) {
-    currentTier = tier;
-    document.getElementById('tier-basic').classList.toggle('selected', tier === 'basic');
-    document.getElementById('tier-advanced').classList.toggle('selected', tier === 'advanced');
   }
 
   function openModal(mode) {
@@ -1113,7 +1090,7 @@
       phone: phone,
       email: email,
       address: address,
-      contract_tier: currentTier,
+      contract_tier: 'To be assigned based on system type',
       customer_type: currentMode === 'switch' ? 'Switcher' : 'New Customer',
       current_contract_expiry: expiry || 'N/A',
       offer: '50% Off First 6 Months',
