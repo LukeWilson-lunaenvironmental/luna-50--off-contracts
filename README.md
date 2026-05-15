@@ -1,2 +1,2 @@
-# luna-pump-party
-Luna Environmental pump out party landing page
+# luna-50%-off-contracts
+Luna Environmental 50% off contracts landing page
